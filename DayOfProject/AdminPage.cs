@@ -26,6 +26,7 @@ namespace DayOfProject
                         join d in dbContext.DayOffs on u.Id equals d.UserId
                         select new
                         {
+
                             u.TC,
                             u.Name,
                             u.Email,
@@ -37,6 +38,7 @@ namespace DayOfProject
                          select new
                          {
                              r.Id,
+                             r.UserId,
                              u.TC,
                              u.Name,
                              u.Email,
@@ -54,15 +56,62 @@ namespace DayOfProject
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
 
         }
 
         private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var request = dbContext.Requests.Find(dataGridView2.CurrentRow.Cells[0].Value);
-            request.Statues = "Onaylandi";
-            dbContext.SaveChanges();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var request = dbContext.Requests.Find(dataGridView2.CurrentRow.Cells[0].Value);
+                if (request.Statues != "Onaylandi")
+                {
+                    request.Statues = "Onaylandi";
+                    var user = dbContext.Users.Find(dataGridView2.CurrentRow.Cells[1].Value);
+                    var sorgu = from u in dbContext.Users
+                                join d in dbContext.DayOffs on user.Id equals d.UserId
+                                select new
+                                {
+                                    d.Id
+                                };
+                    var dayOff = dbContext.DayOffs.Where(x => x.UserId == user.Id);
+                    var value = dayOff.FirstOrDefault();
+                    value.Number = value.Number - request.RequestDay;
+                    dbContext.SaveChanges();
+                }
+
+                MessageBox.Show("Islem Onaylandi");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+           
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var request = dbContext.Requests.Find(dataGridView2.CurrentRow.Cells[0].Value);
+                request.Statues = "Reddedildi";
+                dbContext.SaveChanges();
+                MessageBox.Show("Islem Reddedildi");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

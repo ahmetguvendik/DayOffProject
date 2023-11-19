@@ -30,15 +30,24 @@ namespace DayOfProject
         public string userId;
         private void button1_Click(object sender, EventArgs e)
         {
-            var request = new Request()
+            try
             {
-                RequestDay = Int32.Parse(textBox1.Text),
-                Statues = "Onay Bekliyor",
-                UserId = Int32.Parse(userId)
-            };
+                var request = new Request()
+                {
+                    RequestDay = Int32.Parse(textBox1.Text),
+                    Statues = "Onay Bekliyor",
+                    UserId = Int32.Parse(userId)
+                };
 
-            dbContext.Requests.Add(request);
-            dbContext.SaveChanges();
+                dbContext.Requests.Add(request);
+                dbContext.SaveChanges();
+                MessageBox.Show("Izin Talabiniz Onaya Gonderildi");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public string NameSurname;

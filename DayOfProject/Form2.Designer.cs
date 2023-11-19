@@ -117,6 +117,7 @@
             button2.TabIndex = 7;
             button2.Text = "Giris Sayfasina Git";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox1
             // 
@@ -191,6 +192,7 @@
             Controls.Add(label1);
             Name = "Form2";
             Text = "Kullanici Adi";
+            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }

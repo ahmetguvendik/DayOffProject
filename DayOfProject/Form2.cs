@@ -24,35 +24,57 @@ namespace DayOfProject
             InitializeComponent();
         }
 
-        private  void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            var user = new User()
+            try
             {
-                TC = Int32.Parse(textBox1.Text),
-                Name = textBox2.Text,
-                UserName = textBox3.Text,
-                Email = textBox4.Text,
-                Password = textBox5.Text,
-                ConfirmPassword = textBox6.Text,
-                Role = "Member"
-                
-            };
-            dbContext.Users.Add(user);
-            dbContext.SaveChanges();
+                var user = new User()
+                {
+                    TC = Int32.Parse(textBox1.Text),
+                    Name = textBox2.Text,
+                    UserName = textBox3.Text,
+                    Email = textBox4.Text,
+                    Password = textBox5.Text,
+                    ConfirmPassword = textBox6.Text,
+                    Role = "Member"
 
-            var dayOff = new DayOff()
+                };
+                dbContext.Users.Add(user);
+                dbContext.SaveChanges();
+
+                var dayOff = new DayOff()
+                {
+                    Number = 30,
+                    UserId = user.Id,
+                };
+
+
+                dbContext.DayOffs.Add(dayOff);
+                dbContext.SaveChanges();
+
+
+                ;
+                MessageBox.Show("Kayit Olma Islemi Basarili");
+            }
+            catch (Exception ex)
             {
-                Number = 30,
-                UserId = user.Id,
-            };
 
-          
-            dbContext.DayOffs.Add(dayOff);
-            dbContext.SaveChanges();
+                MessageBox.Show(ex.Message);
+            }
 
-           
-  ;
+
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.ShowDialog();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            textBox5.PasswordChar = '*';
+            textBox6.PasswordChar = '*';
+        }
     }
 }
