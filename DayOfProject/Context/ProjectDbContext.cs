@@ -1,12 +1,6 @@
 ﻿using DayOfProject.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace DayOfProject.Context
 {
@@ -14,7 +8,7 @@ namespace DayOfProject.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=AHMET;Database=DayOff;Trusted_Connection=True;TrustServerCertificate=True");
+           optionsBuilder.UseSqlServer("Server=AHMET;Database=DayOff;Trusted_Connection=True;TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

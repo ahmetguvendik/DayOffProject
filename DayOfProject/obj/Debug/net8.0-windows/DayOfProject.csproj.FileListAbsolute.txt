@@ -145,3 +145,9 @@ C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\
 C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\obj\Debug\net8.0-windows\DayOfProject.Form2.resources
 C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\obj\Debug\net8.0-windows\DayOfProject.MemberPage.resources
 C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\obj\Debug\net8.0-windows\DayOfProject.AdminPage.resources
+C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Binder.dll

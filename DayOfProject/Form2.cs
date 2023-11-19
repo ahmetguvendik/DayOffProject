@@ -39,9 +39,14 @@ namespace DayOfProject
                     Role = "Member"
 
                 };
-                dbContext.Users.Add(user);
-                dbContext.SaveChanges();
+                if (textBox5.Text == textBox6.Text)
+                {
+                    dbContext.Users.Add(user);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Kayit Olma Islemi Basarili");
+                }
 
+                MessageBox.Show("Sifre Uyusmuyor");
                 var dayOff = new DayOff()
                 {
                     Number = 30,
@@ -54,7 +59,7 @@ namespace DayOfProject
 
 
                 ;
-                MessageBox.Show("Kayit Olma Islemi Basarili");
+
             }
             catch (Exception ex)
             {
@@ -75,6 +80,11 @@ namespace DayOfProject
         {
             textBox5.PasswordChar = '*';
             textBox6.PasswordChar = '*';
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
