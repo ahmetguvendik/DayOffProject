@@ -37,9 +37,21 @@ namespace DayOfProject
                 Role = "Member"
                 
             };
-                
             dbContext.Users.Add(user);
             dbContext.SaveChanges();
+
+            var dayOff = new DayOff()
+            {
+                Number = 30,
+                UserId = user.Id,
+            };
+
+          
+            dbContext.DayOffs.Add(dayOff);
+            dbContext.SaveChanges();
+
+           
+  ;
         }
 
     }

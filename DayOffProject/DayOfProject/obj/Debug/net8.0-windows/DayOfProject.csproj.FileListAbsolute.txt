@@ -143,3 +143,4 @@ C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\
 C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Extensions.WebEncoders.dll
 C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\bin\Debug\net8.0-windows\Microsoft.Net.Http.Headers.dll
 C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\obj\Debug\net8.0-windows\DayOfProject.Form2.resources
+C:\Users\ahmet\source\repos\DayOffProject\DayOfProject\obj\Debug\net8.0-windows\DayOfProject.MemberPage.resources

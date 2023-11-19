@@ -24,5 +24,6 @@ namespace DayOfProject.Context
         }
         public DbSet<DayOff> DayOffs { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Request> Requests { get; set; }
     }
 }
